@@ -1,0 +1,41 @@
+﻿@model E_LearningProject.Models.Course
+
+@{
+    ViewData["Title"] = "CourseInfo";
+}
+
+<h1 class="accordion-body">Course Information</h1>
+
+<div>
+    <hr />
+    <dl class="row accordion-body">
+        <dt class = "col-sm-2">
+            Course Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+        <dt class = "col-sm-2">
+           Category
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.category.Category_Name)
+        </dd>
+        <dt class="col-sm-2">
+            Instructor
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Instructor)
+        </dd>
+        <dt class="col-sm-2">
+            Course Link
+        </dt>
+        <dd class="col-sm-10">
+            <a href="@Html.DisplayFor(model => model.Link)">Click Here To View The Course</a>
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Details" class="accordion-body accordion-collapse">Back to List</a>
+</div>

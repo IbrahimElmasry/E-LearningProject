@@ -1,0 +1,47 @@
+﻿@model IEnumerable<E_LearningProject.Models.Course>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="accordion-body">Courses List</h1>
+
+
+<table class="table table-hover  table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+               Course Name
+            </th>
+            <th>
+                Course Category
+            </th>
+            <th>
+                Instructor
+            </th>
+
+            <th>
+               Course Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.category.Category_Name)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instructor)
+                </td>
+            <td>
+                <a asp-action="CourseInfo" asp-route-id="@item.CourseId">View Details</a> 
+          
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

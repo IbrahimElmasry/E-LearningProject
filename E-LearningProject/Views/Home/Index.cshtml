@@ -1,0 +1,323 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="~/img/carousel-1.jpg" alt="">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
+                            <h1 class="display-3 text-white animated slideInDown">The Best Online Learning Platform</h1>
+                            <p class="fs-5 text-white mb-4 pb-2">Are you feeling stuck or overwhelmed in your coding journey? Don't worry, I've got your back! Together, we'll work to level up your skills, increase your earning potential, and build a brighter future.</p>
+                            <a asp-action="About" asp-controller="Home" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                            <a asp-controller="home" asp-action="Login" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Log In or Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="~/img/carousel-2.jpg" alt="">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
+                            <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
+                            <p class="fs-5 text-white mb-4 pb-2">Are you feeling stuck or overwhelmed in your coding journey? Don't worry, I've got your back! Together, we'll work to level up your skills, increase your earning potential, and build a brighter future.</p>
+                            <a asp-controller="Home" asp-action="About"  class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                            <a asp-controller="home" asp-action="Login" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Log In or Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+<!--videostart-->
+<style>
+    .video-container {
+        max-width: 1000px; /* Adjust the maximum width as needed */
+        margin: 0 auto; /* Center the video horizontally */
+    }
+
+        .video-container video {
+            width: 100%; /* Make the video fill its container */
+            height: auto; /* Maintain the aspect ratio */
+        }
+</style>
+
+<div class="video-container">
+    <video controls src="~/VideoE.mp4">
+    </video>
+</div>
+
+
+
+<!--EndVdieo-->
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                        <h5 class="mb-3">Skilled Instructors</h5>
+                        <p>
+                         Our platform boasts a team of skilled instructors, each meticulously selected for their expertise and passion for teaching. With years of industry experience under their belts, our instructors are dedicated to guiding students towards mastery in their chosen field.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                        <h5 class="mb-3">Online Classes</h5>
+                        <p>Embark on your learning journey with our comprehensive array of online classes. From the comfort of your own home, gain access to high-quality education delivered by experienced instructors, tailored to suit your schedule and learning pace.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                        <h5 class="mb-3">Remote Education</h5>
+                        <p>
+                            Embrace the ease and adaptability of home learning through our carefully curated resources and dynamic online courses. Whether you're pursuing new skills or refining existing ones, our platform fosters an encouraging atmosphere for self-paced learning and individual advancement, all within the comfort of your own home.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                        <h5 class="mb-3">Book Library</h5>
+                        <p>Discover boundless knowledge in our virtual library, offering a diverse collection of books across genres. From timeless classics to modern masterpieces, our shelves are stocked with treasures to ignite your imagination and enrich your mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+<!-- About Start -->
+<div b-7tw5unib32="" class="container-xxl py-5">
+    <div b-7tw5unib32="" class="container">
+        <div b-7tw5unib32="" class="row g-5">
+            <div b-7tw5unib32="" class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div b-7tw5unib32="" class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="/img/about.jpg" alt="" style="object-fit: cover;">
+                </div>
+            </div>
+            <div b-7tw5unib32="" class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <h6 b-7tw5unib32="" class="section-title bg-white text-start text-primary pe-3">
+                    Why Code with eLearning ?
+                </h6>
+                <h1 b-7tw5unib32="" class="mb-4">
+                    Level Up Your Coding Skills
+
+                </h1>
+                <p b-7tw5unib32="" class="mb-4">
+                    No fluff, just the good stuff!
+
+                </p>
+                <p b-7tw5unib32="" class="mb-4">We don't want to waste your time with boring stuff you don't need. So I've made sure my courses are clear, concise, to the point, and free of technical jargon. No rambling or repetition, just the essentials you need to succeed, explained in plain English.</p>
+                <div b-7tw5unib32="" class="row gy-2 gx-4 mb-4">
+                    <div b-7tw5unib32="" class="col-sm-6">
+                        <p b-7tw5unib32="" class="mb-0"><i b-7tw5unib32="" class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                    </div>
+                    <div b-7tw5unib32="" class="col-sm-6">
+                        <p b-7tw5unib32="" class="mb-0"><i b-7tw5unib32="" class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                    </div>
+                    <div b-7tw5unib32="" class="col-sm-6">
+                        <p b-7tw5unib32="" class="mb-0">
+                            <i b-7tw5unib32="" class="fa fa-arrow-right text-primary me-2"></i>Fast-track your learning
+
+                        </p>
+                    </div>
+                    <div b-7tw5unib32="" class="col-sm-6">
+                        <p b-7tw5unib32="" class="mb-0">
+                            <i b-7tw5unib32="" class="fa fa-arrow-right text-primary me-2"></i>Easy-to-follow lessons
+
+                        </p>
+                    </div>
+                    <div b-7tw5unib32="" class="col-sm-6">
+                        <p b-7tw5unib32="" class="mb-0">
+                            <i b-7tw5unib32="" class="fa fa-arrow-right text-primary me-2"></i>Hands-on learning
+
+                        </p>
+                    </div>
+                    <div b-7tw5unib32="" class="col-sm-6">
+                        <p b-7tw5unib32="" class="mb-0">
+                            <i b-7tw5unib32="" class="fa fa-arrow-right text-primary me-2"></i>Real-world projects
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!-- Categories Start -->
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
+            <h1 class="mb-5">Courses Categories</h1>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-7 col-md-6">
+                <div class="row g-3">
+                    <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="~/img/cat-1.jpg" alt="">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">Front-End Development</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="~/img/cat-2.jpg" alt="">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">Back-End Development</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="~/img/cat-3.jpg" alt="">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">Mobile Development</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                <a class="position-relative d-block h-100 overflow-hidden" href="">
+                    <img class="img-fluid position-absolute w-100 h-100" src="~/img/cat-4.jpg" alt="" style="object-fit: cover;">
+                    <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
+                        <h5 class="m-0">Programming Languages</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Categories Start -->
+
+
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+            <h1 class="mb-5">Expert Instructors</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="~/img/team-1.png" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">
+                            David J. Malan
+                        </h5>
+                        <br />
+                        <a asp-action="David" asp-controller="Home">
+                            <button type="button" class="btn btn-primary">Details</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="~/img/Mosh.png" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Mosh Hamedani</h5>
+                        <br />
+                        <a asp-action="Mosh" asp-controller="Home">
+                            <button type="button" class="btn btn-primary">Details</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="~/img/Osama.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Osama Elzero</h5>
+                        <br />
+                        <a asp-action="Osama" asp-controller="Home">
+                            <button type="button" class="btn btn-primary">Details</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="~/img/Essam.jpg" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">Essam Abd Elnaby</h5>
+                        <br/>
+                        <a asp-action="Andre" asp-controller="Home">
+                            <button type="button" class="btn btn-primary">Details</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->

@@ -1,0 +1,437 @@
+﻿
+@{
+    ViewData["Title"] = "Book";
+}
+<br />
+<br />
+<h1 class="text-center mb-4">Welcome To Our Book Library</h1>
+<h4 class="text-center mb-4">
+    Notes for Professionals books are compiled from Stack Overflow
+    Documentation, the content is written by the beautiful people at Stack Overflow.
+    Text content is released under Creative Commons BY-SA, see credits at the end
+    of this book whom contributed to the various chapters. Images may be copyright
+    of their respective owners unless otherwise specified
+</h4>
+
+
+<br />
+<br />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increased minimum width of columns */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 12px; /* Increased border radius */
+            padding: 30px; /* Increased padding */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased box shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transitions */
+        }
+
+            .card:hover {
+                transform: translateY(-8px) scale(1.02); /* Increased lift and scale on hover */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced box shadow on hover */
+            }
+
+        .card-content {
+            font-size: 18px; /* Increased font size */
+            line-height: 1.6;
+            text-align: center; /* Center align text */
+        }
+
+        .card-image {
+            max-width: 100%; /* Ensure image doesn't exceed container width */
+            border-radius: 8px; /* Rounded corners for the image */
+            margin-bottom: 10px; /* Space between image and content */
+        }
+
+        .card-link {
+            display: block; /* Make the link a block element */
+            text-decoration: none; /* Remove underline */
+            color: #007bff; /* Link color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="~/Books Thunibals/DotNetFrameWork.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>.NET FrameWork Notes For Professionals</p>
+
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Algorithms.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Algorithms Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Android.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Android Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Angular 2Plus.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Angular 2+ Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+       
+        <div class="card">
+            <img src="~/Books Thunibals/AngularJS.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Angular JS Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/Bash.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Bash Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/CPlusPlus.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>C++ Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/C.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>C Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/CSS.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>CSS Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/EntityFrameWork.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Entity FrameWork Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Excel VBA.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Excel VBA Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/Git.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>GIT Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/HTML5Canvas.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>HTML 5 Canvas Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/IOS Developer.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/Java.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Java Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/JavaScript.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Java Script Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/jQuery.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>JQuery Notes For Professionals.</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Kotlin.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>KOTLIN Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+       
+        <div class="card">
+            <img src="~/Books Thunibals/Linux.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Linux Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Matlab.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Matlab Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/MicrosoftSqlServer.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Microsoft Sql Server Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/MySQL.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>MySql Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+      
+        <div class="card">
+            <img src="~/Books Thunibals/Node.JS.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>NodeJS Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/o55etj6r.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>CSharp Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+       
+        <div class="card">
+            <img src="~/Books Thunibals/Objective-C.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Objective-C Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/Perl.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Perl Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/PHP.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>PHP Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/PostgreSQL.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>PostGreSQL Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+      
+        <div class="card">
+            <img src="~/Books Thunibals/PowerShell.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Power Shell Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/Python.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Python Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="~/Books Thunibals/qsvyx6kk.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Hibernate Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/ReactJS.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>ReactJS Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/ReactNative.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>React Native Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Ruby on Rails.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Ruby on Rails Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Ruby.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Ruby Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/sn25fv57.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>HTML5 Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="~/Books Thunibals/Spring Framework.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Spring FrameWork Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="~/Books Thunibals/Sql.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Sql Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+  
+
+        <div class="card">
+            <img src="~/Books Thunibals/Swift.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>Swift Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="~/Books Thunibals/TypeScript.png" alt="Cave Image" class="card-image">
+            <div class="card-content">
+                <p>TypeScript Notes For Professionals</p>
+                <a href="#" class="card-link">View Book</a>
+            </div>
+        </div>
+
+
+ 
+
+    </div>
+
+</body>

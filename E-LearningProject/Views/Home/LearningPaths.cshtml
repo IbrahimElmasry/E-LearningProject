@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Learning Paths";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Update the layout path as per your project
+}
+
+<style>
+    .card {
+        height: 100%;
+    }
+
+    .card-img-top:hover {
+        transform: scale(1.1); /* Increase the scale on hover */
+        opacity: 0.8; /* Reduce opacity on hover */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Add smooth transition */
+    }
+
+    .card-title:hover {
+        text-decoration: underline;
+        color: #007bff; /* Change to the desired hover color */
+    }
+</style>
+
+<div class="container">
+    <br />
+    <h2 class="text-center mb-4">Learning Paths</h2>
+    <h4 class="text-center mb-4">Discover your optimal learning path to reach your full potential.</h4>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/Fundementals.png" class="card-img-top" alt="Fundamentals Image">
+                <div class="card-body">
+                    <a asp-action="Fundementals" asp-controller="Home" class="card-title"><h5>Fundamentals</h5></a>
+                    <p class="card-text">Essential courses that anyone pursuing a career as a professional software engineer should take. Data structures, algorithms, design patterns, and more!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/Front-End Dvelopment.png" class="card-img-top" alt="Front-end Development Image">
+                <div class="card-body">
+                    <a asp-action="Front" asp-controller="Home" class="card-title"><h5>Front-end Development</h5></a>
+                    <p class="card-text">All the courses you need to build beautiful websites. HTML, CSS, JavaScript, React, and more!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/Back-End Dvelopment.png" class="card-img-top" alt="Back-end Development Image">
+                <div class="card-body">
+                    <a asp-action="Back" asp-controller="Home" class="card-title"><h5>Back-end Development</h5></a>
+                    <p class="card-text">All the courses you need to build powerful APIs for web and mobile apps. Node, Django, ASP.NET MVC, MySQL, and more!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/Mobile-Development.png" class="card-img-top" alt="Mobile Development Image">
+                <div class="card-body">
+                    <a <a asp-action="Mobile" asp-controller="Home" class="card-title"><h5>Mobile Development</h5></a>
+                    <p class="card-text">All the courses you need to build professional, cross-platform mobile apps using React Native.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="~/Game Development.png" class="card-img-top" alt="Game Development Image">
+                <div class="card-body">
+                    <a asp-action="Game" asp-controller="Home" class="card-title"><h5>Game Development</h5></a>
+                    <p class="card-text">The fundamental courses you need to build games.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <!-- Include any additional scripts here if needed -->
+}
