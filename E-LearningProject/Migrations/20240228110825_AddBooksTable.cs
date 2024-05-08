@@ -14,7 +14,7 @@ namespace E_LearningProject.Migrations
                 name: "FK_Users_Courses_CourseId",
                 table: "Users");
 
-            migrationBuilder.DropIndex(
+            migrationBuilder.DropIndex( 
                 name: "IX_Users_CourseId",
                 table: "Users");
 
@@ -29,7 +29,7 @@ namespace E_LearningProject.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageData = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    ImageData = table.Column<byte[]>(type: "varbinary(max)", nullable: false),//
                     Link = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

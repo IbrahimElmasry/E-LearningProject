@@ -35,7 +35,7 @@ namespace E_LearningProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("E_LearningProject.Models.Course", b =>
@@ -67,7 +67,7 @@ namespace E_LearningProject.Migrations
 
                     b.HasIndex("Category_Id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("E_LearningProject.Models.User", b =>
@@ -92,7 +92,7 @@ namespace E_LearningProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("E_LearningProject.Models.Course", b =>

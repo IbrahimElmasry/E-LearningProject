@@ -5,7 +5,7 @@
 namespace E_LearningProject.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialCreate : Migration 
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace E_LearningProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Category_Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
-                constraints: table =>
+                constraints: table =>  //
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
                 });
