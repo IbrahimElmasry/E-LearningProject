@@ -22,8 +22,7 @@ We feature some of the most renowned instructors in the tech industry, offering 
 To get started with our E-Learning platform, follow these steps:
 
 1. **Clone the Repository:** Clone this repository to your local machine using the following command:
-git clone https://github.com/MahmoudAMahmoud/E-Learning-Platform
-
+git clone https://github.com/IbrahimElmasry/E-LearningProject.git
 
 2. **Set Up the Environment:** Ensure you have ASP.NET installed on your machine. You can download it from [here](https://dotnet.microsoft.com/download/dotnet).
 
