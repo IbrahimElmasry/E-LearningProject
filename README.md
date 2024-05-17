@@ -2,7 +2,7 @@
 
 Welcome to our E-Learning project powered by AI! This project, built using ASP.NET framework and implemented in C#, follows the Model-View-Controller (MVC) architecture. It aims to revolutionize online learning by integrating artificial intelligence features, a comprehensive library of books, and curated learning paths in various programming tracks.
 
-![E-Learning](https://github.com/MahmoudAMahmoud/E-Learning-Platform/assets/90136352/1ce54d47-3313-48ce-8b53-0ef86a194b09)
+![E-Learning](https://github.com/IbrahimElmasry/E-LearningProject/assets/120456709/7981c2de-046f-4bf8-8501-285d48a6865e)
 
 ## Features
 
@@ -22,8 +22,7 @@ We feature some of the most renowned instructors in the tech industry, offering 
 To get started with our E-Learning platform, follow these steps:
 
 1. **Clone the Repository:** Clone this repository to your local machine using the following command:
-git clone https://github.com/MahmoudAMahmoud/E-Learning-Platform
-
+git clone https://github.com/IbrahimElmasry/E-LearningProject.git
 
 2. **Set Up the Environment:** Ensure you have ASP.NET installed on your machine. You can download it from [here](https://dotnet.microsoft.com/download/dotnet).
 
