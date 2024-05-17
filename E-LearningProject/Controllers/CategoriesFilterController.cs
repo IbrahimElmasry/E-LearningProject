@@ -11,12 +11,12 @@ namespace E_LearningProject.Controllers
 {
     public class CategoriesFilterController : Controller
     {
-            public  ApplicationDBContext  _context = new ApplicationDBContext();
+        private ApplicationDBContext _context;
 
-        //public CategoriesFilterController(ApplicationDBContext context)
-        //{
-        //    _context = context;
-        //}
+        public CategoriesFilterController(ApplicationDBContext context)
+        {
+            _context = context;
+        }
 
         // GET: CategoriesFilter
         public IActionResult Index()

@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_LearningProject.Models
 {
-    public class User
+    public class UserDto  
     {
-        public int Id { get; set; }
+        public string FristName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
-        public string PasswordHash { get; set; }
-
+        public string Password { get; set; }
 
 
     }

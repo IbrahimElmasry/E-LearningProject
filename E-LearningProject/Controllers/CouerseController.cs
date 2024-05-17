@@ -8,7 +8,11 @@ namespace E_LearningProject.Controllers
     public class CouerseController : Controller
     {
         // GET: CouerseController
-        ApplicationDBContext db =new ApplicationDBContext();
+        private ApplicationDBContext db;
+        public CouerseController(ApplicationDBContext _db)
+        {
+            db=_db;
+        }
         public ActionResult Index()
         {
             return View();

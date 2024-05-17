@@ -1,8 +1,25 @@
+using E_LearningProject.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 /// pipeline 
+ var Configuration = builder.Configuration;
+builder.Services.AddDbContext<ApplicationDBContext>
+    (option => option.UseSqlServer(Configuration.GetConnectionString("Connstr")));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 8;
+}).AddEntityFrameworkStores<ApplicationDBContext>();
 
 var app = builder.Build(); //1
 
@@ -21,6 +38,6 @@ app.UseRouting();//5
 app.UseAuthorization();//6
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Register}/{id?}");
 
 app.Run();

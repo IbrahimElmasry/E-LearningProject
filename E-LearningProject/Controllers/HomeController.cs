@@ -8,7 +8,12 @@ namespace E_LearningProject.Controllers
     public class HomeController : Controller
 
     {
-        public ApplicationDBContext _context = new ApplicationDBContext();
+        public ApplicationDBContext _context;
+
+        public HomeController(ApplicationDBContext context)
+        {
+            _context = context;
+        }
 
         private readonly ILogger<HomeController> _logger;
 

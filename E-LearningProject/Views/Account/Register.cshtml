@@ -1,0 +1,33 @@
+﻿@model E_LearningProject.Models.UserDto
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label asp-for="FristName"></label>
+        <input asp-for="FristName" />
+        <span asp-validation-for="FristName"></span>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <button type="submit">Register</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
