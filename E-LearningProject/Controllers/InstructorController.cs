@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_LearningProject.Controllers
 {
+    [Authorize]
     public class InstructorController : Controller
     {
         // GET: InstructorController

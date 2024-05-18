@@ -49,22 +49,59 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a asp-action="Index" asp-controller="Home" class="nav-item nav-link active">Home</a>
-                <a asp-action="About" asp-controller="Home" class="nav-item nav-link">About</a>
-                <a asp-action="Details" asp-controller="Couerse" class="nav-item nav-link">Courses</a>
-                <a asp-action="Book" asp-controller="Home" class="nav-item nav-link">Book library</a>
 
-                <a asp-action="LearningPaths" asp-controller="Home" class="nav-item nav-link">Learning Paths</a>
-            </div>
-            <a href="https://www.chatbase.co/chatbot-iframe/VJPjRJ9yGKGF6phwasnTm" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Try Our New Chat Bot<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-action="Index" asp-controller="Home"
+                       class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")"
+                       style="@(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "background-color: #f8f9fa; color: #007bff;" : "")"
+                       onmouseover="this.style.backgroundColor='#e2e6ea'; this.style.color='#0056b3';"
+                       onmouseout="@(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "this.style.backgroundColor='#f8f9fa'; this.style.color='#007bff';" : "this.style.backgroundColor=''; this.style.color='';")"
+                       aria-current="page">Home</a>
 
-                
+                    <a asp-action="About" asp-controller="Home"
+                       class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "About" ? "active" : "")"
+                       style="@(ViewContext.RouteData.Values["action"].ToString() == "About" ? "background-color: #f8f9fa; color: #007bff;" : "")"
+                       onmouseover="this.style.backgroundColor='#e2e6ea'; this.style.color='#0056b3';"
+                       onmouseout="@(ViewContext.RouteData.Values["action"].ToString() == "About" ? "this.style.backgroundColor='#f8f9fa'; this.style.color='#007bff';" : "this.style.backgroundColor=''; this.style.color='';")">About</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-action="Index" asp-controller="Couerse"
+                           class="nav-item nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Couerse" ? "active" : "")"
+                           style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Couerse" ? "background-color: #f8f9fa; color: #007bff;" : "")"
+                           onmouseover="this.style.backgroundColor='#e2e6ea'; this.style.color='#0056b3';"
+                           onmouseout="@(ViewContext.RouteData.Values["Controller"].ToString() == "Couerse" ? "this.style.backgroundColor='#f8f9fa'; this.style.color='#007bff';" : "this.style.backgroundColor=''; this.style.color='';")"
+                           aria-current="page">Courses</a>
+                    }
 
-                
+                    <a asp-action="Book" asp-controller="Home"
+                       class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Book" ? "active" : "")"
+                       style="@(ViewContext.RouteData.Values["action"].ToString() == "Book" ? "background-color: #f8f9fa; color: #007bff;" : "")"
+                       onmouseover="this.style.backgroundColor='#e2e6ea'; this.style.color='#0056b3';"
+                       onmouseout="@(ViewContext.RouteData.Values["action"].ToString() == "Book" ? "this.style.backgroundColor='#f8f9fa'; this.style.color='#007bff';" : "this.style.backgroundColor=''; this.style.color='';")">Book library</a>
+
+                    <a asp-action="LearningPaths" asp-controller="Home"
+                       class="nav-item nav-link @(ViewContext.RouteData.Values["action"].ToString() == "LearningPaths" ? "active" : "")"
+                       style="@(ViewContext.RouteData.Values["action"].ToString() == "LearningPaths" ? "background-color: #f8f9fa; color: #007bff;" : "")"
+                       onmouseover="this.style.backgroundColor='#e2e6ea'; this.style.color='#0056b3';"
+                       onmouseout="@(ViewContext.RouteData.Values["action"].ToString() == "LearningPaths" ? "this.style.backgroundColor='#f8f9fa'; this.style.color='#007bff';" : "this.style.backgroundColor=''; this.style.color='';")">Learning Paths</a>
+
+                    <form asp-action="Logout" asp-controller="Account" method="post" class="form-inline">
+                        @* Added form-inline class *@
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="nav-item nav-link btn btn-link">Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <a asp-action="Login" asp-controller="Account" class="nav-item nav-link">Login</a>
+                    <a asp-action="Register" asp-controller="Account" class="nav-item nav-link">Register</a>
+                }
             </div>
         </div>
     </nav>
+
+
     <!-- Navbar End -->
 
     <script>

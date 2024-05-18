@@ -38,8 +38,8 @@
                     @Html.DisplayFor(modelItem => item.Instructor)
                 </td>
             <td>
-                <a asp-action="CourseInfo" asp-route-id="@item.CourseId">View Details</a> 
-          
+                    <a asp-action="Details" asp-route-id="@item.CourseId">View Details</a>
+
             </td>
         </tr>
 }

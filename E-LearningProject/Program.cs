@@ -1,41 +1,46 @@
 using E_LearningProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configure services
 builder.Services.AddControllersWithViews();
-/// pipeline 
- var Configuration = builder.Configuration;
-builder.Services.AddDbContext<ApplicationDBContext>
-    (option => option.UseSqlServer(Configuration.GetConnectionString("Connstr")));
+
+// Configure database context
+var connectionString = builder.Configuration.GetConnectionString("Connstr");
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// Configure Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
     options.SignIn.RequireConfirmedAccount = true;
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequiredLength = 8;
-}).AddEntityFrameworkStores<ApplicationDBContext>();
+    options.Password.RequireDigit = true; // No digit required
+    options.Password.RequireLowercase = true; // No lowercase letter required
+    options.Password.RequireUppercase = true; // No uppercase letter required
+    options.Password.RequireNonAlphanumeric = false; // No special character required
+    options.Password.RequiredLength = 7; // Minimum length set to 1
+})
+.AddEntityFrameworkStores<ApplicationDBContext>();
 
-var app = builder.Build(); //1
+var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error"); //2
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseExceptionHandler("/Home/Error"); // Handle errors with a custom error page
+    app.UseHsts(); // Use HTTP Strict Transport Security
 }
-app.UseHttpsRedirection(); // 3
-app.UseStaticFiles(); // 4
 
-app.UseRouting();//5
+app.UseHttpsRedirection(); // Redirect HTTP requests to HTTPS
+app.UseStaticFiles(); // Serve static files like CSS, JavaScript, and images
 
-app.UseAuthorization();//6
+app.UseRouting(); // Enable endpoint routing
+
+app.UseAuthorization(); // Authentication middleware
+
+// Map default controller route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Register}/{id?}");

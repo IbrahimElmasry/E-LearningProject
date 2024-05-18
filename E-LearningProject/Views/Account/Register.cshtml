@@ -1,33 +1,112 @@
 ﻿@model E_LearningProject.Models.UserDto
 
-<h2>Register</h2>
+@{
+    ViewData["Title"] = "Register";
+}
+<link href="~/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="~/assets/css/style.css" rel="stylesheet">
 
-<form asp-action="Register" method="post">
-    <div>
-        <label asp-for="FristName"></label>
-        <input asp-for="FristName" />
-        <span asp-validation-for="FristName"></span>
+<style>
+    /* Custom CSS for enhanced styling */
+    .form-container {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+        .form-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+        }
+
+        .form-container input[type="password"],
+        .form-container input[type="email"],
+        .form-container input[type="text"] {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .form-container .btn-primary {
+            background-color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .form-container .btn-primary:hover {
+                background-color: #45a049;
+            }
+
+        .form-container .btn-outline-primary {
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+            .form-container .btn-outline-primary:hover {
+                color: #fff;
+                background-color: #4CAF50;
+                border-color: #4CAF50;
+            }
+</style>
+<br/>
+<h1 class="text-center mb-4">Register</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="form-container">
+            <form asp-action="Register" method="post">
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label">First Name</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label">Last Name</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword" class="control-label">Confirm Password</label>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="@Url.Action("Login", "Account")" class="btn btn-outline-primary">Login here</a></p>
+            </div>
+        </div>
     </div>
-    <div>
-        <label asp-for="LastName"></label>
-        <input asp-for="LastName" />
-        <span asp-validation-for="LastName"></span>
-    </div>
-    <div>
-        <label asp-for="Email"></label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" type="password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <button type="submit">Register</button>
-</form>
+</div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <partial name="_ValidationScriptsPartial" />
 }

@@ -1,87 +1,108 @@
 ﻿using E_LearningProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace E_LearningProject.Controllers.Account
 {
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ApplicationDBContext _dbContext;
-        public AccountController(UserManager<IdentityUser> userManager,
-                    RoleManager<IdentityRole> roleManager,
-                     SignInManager<IdentityUser> signInManager,
-                     ApplicationDBContext dbContext)
+        private readonly ILogger<AccountController> _logger; // Add ILogger
+
+        public AccountController(
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            ApplicationDBContext dbContext,
+            ILogger<AccountController> logger) // Inject ILogger
         {
             _userManager = userManager;
-            _roleManager = roleManager;
             _signInManager = signInManager;
             _dbContext = dbContext;
-
+            _logger = logger;
         }
+
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> Register(UserDto use)
+        public async Task<IActionResult> Register(UserDto userDto)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-
-                var res= await _userManager.FindByEmailAsync(use.Email);
-                if(res.Email is  null)
+                var existingUser = await _userManager.FindByEmailAsync(userDto.Email);
+                if (existingUser != null)
                 {
-                    var St = new IdentityUser
-                    {
-                        UserName = use.FristName + use.LastName,
-                        Email = use.Email
+                    ModelState.AddModelError(string.Empty, "Email is already taken.");
+                    return View(userDto);
+                }
 
-                    };
-                    var Result = await _userManager.CreateAsync(St, use.Password);
-                    var re = _dbContext.SaveChanges();
-                    if (Result.Succeeded)
-                    {
-                        return RedirectToAction("Index", "Home", use);
-                    }
-                }
-                else
+                var user = new IdentityUser
                 {
-                    return View(use);
+                    UserName = userDto.Email, // Use email as username for simplicity
+                    Email = userDto.Email
+                };
+
+                var result = await _userManager.CreateAsync(user, userDto.Password);
+                if (result.Succeeded)
+                {
+                    _logger.LogInformation("User created a new account with password.");
+                    // You might want to consider email confirmation or other steps here
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
                 }
-               
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
 
-            return View(use);
+            // Log errors for troubleshooting
+            _logger.LogWarning("Registration failed with errors: {Errors}", ModelState);
+
+            return View(userDto);
         }
+
+
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> Login(UserDto use)
+        public async Task<IActionResult> Login(UserDtoLogin userDtoLogin)
         {
             if (ModelState.IsValid)
             {
-                
-                var  user = await _userManager.FindByEmailAsync(use.Email);
-
-                if (user != null)
+                var user = await _userManager.FindByEmailAsync(userDtoLogin.Email);
+                if (user == null || !await _userManager.CheckPasswordAsync(user, userDtoLogin.Password))
                 {
-                    bool found = await _userManager.CheckPasswordAsync(user, use.Password);
-                    if (found)
-                    {
-                        
-                        return RedirectToAction("Index", "Home");
-                    }
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return View(userDtoLogin);
                 }
-                ModelState.AddModelError(string.Empty, "Invalid Email or Password.");
+
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                return RedirectToAction("Index", "Home");
             }
-            return View(use);
+
+            return View(userDtoLogin);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User logged out.");
+            return RedirectToAction("Index", "Home");
         }
 
 

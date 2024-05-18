@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_LearningProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_LearningProject.Controllers
 {
+    [Authorize]
     public class CategoriesFilterController : Controller
     {
         private ApplicationDBContext _context;
