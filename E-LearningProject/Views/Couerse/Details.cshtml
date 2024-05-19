@@ -1,47 +1,85 @@
 ﻿@model IEnumerable<E_LearningProject.Models.Course>
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Courses";
 }
 
-<h1 class="accordion-body">Courses List</h1>
+<style>
+    /* Styling for body and font */
+    body {
+        background-color: #f4f4f4;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
+    /* Add some spacing and style to the main heading */
+    h1 {
+        text-align: center;
+        margin-top: 50px; /* Adjust as needed */
+        color: #333; /* Example: Darker text color */
+    }
 
-<table class="table table-hover  table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>
-               Course Name
-            </th>
-            <th>
-                Course Category
-            </th>
-            <th>
-                Instructor
-            </th>
+    /* Basic table styling */
+    .table {
+        width: 100%; 
+        background-color: white; 
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-            <th>
-               Course Details
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.category.Category_Name)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Instructor)
-                </td>
-            <td>
-                    <a asp-action="Details" asp-route-id="@item.CourseId">View Details</a>
+    /* Style for table headers and cells */
+    .table th, .table td {
+        vertical-align: middle;
+        padding: 15px; 
+    }
 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    /* Style for the "View Details" link */
+    .view-details-link {
+        color: #007bff; 
+        text-decoration: none;
+    }
+
+        .view-details-link:hover {
+            text-decoration: underline;
+        }
+
+    /* Optional: Add more styles for the description if needed */
+    .course-description {
+        max-height: 80px; /* Adjust as needed */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Show ellipsis (...) for long descriptions */
+    }
+</style>
+
+<div class="container">
+    <h1 class="accordion-body">@ViewData["Title"]</h1>
+
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Category</th>
+                <th>Instructor</th>
+                <th>Description</th>  
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.CourseName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.category.Category_Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Instructor)</td>
+                    <td>
+                        <div class="course-description">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </div>
+                    </td>
+                    <td>
+                        <a class="view-details-link" asp-action="Details" asp-route-id="@item.CourseId">View Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

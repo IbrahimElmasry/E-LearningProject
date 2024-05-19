@@ -96,11 +96,37 @@ namespace E_LearningProject.Controllers.Account
 
             return View(userDtoLogin);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
+            // Log Session Before Logout (for debugging purposes)
+            _logger.LogInformation("Session before logout: {Session}", HttpContext.Session?.Id); // Null-conditional check
+
+            // Sign out from ASP.NET Core Identity
             await _signInManager.SignOutAsync();
+
+            // Invalidate the Authentication Cookie
+            if (Request.Cookies.ContainsKey(".AspNetCore.Identity.Application")) // Adjust cookie name if needed
+            {
+                Response.Cookies.Delete(".AspNetCore.Identity.Application", new CookieOptions
+                {
+                    Expires = DateTime.Now.AddDays(-1), // Expire in the past
+                    HttpOnly = true,
+                    Secure = true // Use HTTPS if applicable
+                });
+
+                _logger.LogInformation("Authentication cookie deleted.");
+            }
+            else
+            {
+                _logger.LogWarning("Authentication cookie not found.");
+            }
+
+            // Clear the Session
+            HttpContext.Session.Clear();
+
+            // Log Session After Logout
+            _logger.LogInformation("Session after logout: {Session}", HttpContext.Session?.Id); // Null-conditional check
+
             _logger.LogInformation("User logged out.");
             return RedirectToAction("Index", "Home");
         }
