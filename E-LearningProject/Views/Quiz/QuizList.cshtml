@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Quizzes";
+}
+<head>
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/quiz.css" />
+</head>
+
+
+<main>
+    <div class="container">
+        <div class="products_wrapper">
+            <div class="products">
+                <a asp-action="WebQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/web1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Web MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a  asp-action="AIQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/ai.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">AI MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a asp-action="BackendQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/backend.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Backend MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a asp-action="DesktopQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/desktop.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Desktop MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a asp-action="FrontendQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/frontend.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Frontend MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a asp-action="GamesQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/game-designer-video-game-developer.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Games MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a asp-action="ITQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/it.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">IT MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+            <div class="products">
+                <a asp-action="MobileQuiz" asp-controller="Quiz">
+                    <div class="pr_img">
+                        <img src="~/img/mobile-app-development.png" alt="" />
+                    </div>
+                    <div class="content">
+                        <h3 class="title">Mobile MCQ Quiz</h3>
+                        <p class="price">Start</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
