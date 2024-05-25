@@ -31,6 +31,7 @@ builder.Services.AddSession(options =>
 var connectionString = builder.Configuration.GetConnectionString("Connstr");
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(connectionString));
+
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 {
     // Adjust password requirements based on your security needs

@@ -257,21 +257,24 @@ section .option_list .option .icon{
 .footer{
     display:none;
 }
-footer .total_que span{
+footer .total_que span {
     display: flex;
     user-select: none;
+    margin-left : 36px;
 }
 
 footer .total_que span p{
     font-weight: 500;
-    padding: 0 5px;
+    padding: 0 25px;
 }
 
 footer .total_que span p:first-child{
     padding-left: 0px;
 }
 
-footer button{
+footer button {
+    margin-left: 36px;
+    margin-bottom: 15px;
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
@@ -281,8 +284,8 @@ footer button{
     outline: none;
     color: #fff;
     border-radius: 5px;
-    background: #007bff;
-    border: 1px solid #007bff;
+    background: #A5CF61;
+    border: 1px solid White;
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
@@ -291,7 +294,7 @@ footer button{
 }
 
 footer button:hover{
-    background: #0263ca;
+    background: #6F9B3C;
 }
 
 footer button.show{
