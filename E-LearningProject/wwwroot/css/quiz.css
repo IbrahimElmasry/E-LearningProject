@@ -254,12 +254,9 @@ section .option_list .option .icon{
     background: #f8d7da;
     border-color: #a42834;
 }
-
-footer {
-    display: none;
+.footer{
+    display:none;
 }
-
-
 footer .total_que span{
     display: flex;
     user-select: none;
