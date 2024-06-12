@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_LearningProject.Models
 {
+    //Authorization -- Authentecation
     public class UserDto
     {
         [Required]
@@ -28,7 +29,6 @@ namespace E_LearningProject.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        // ... Add any other relevant properties (e.g., roles, registration date)
     }
     public class UserDtoLogin
     {

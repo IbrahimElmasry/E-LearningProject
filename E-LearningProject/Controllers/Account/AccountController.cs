@@ -17,7 +17,7 @@ namespace E_LearningProject.Controllers.Account
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ApplicationDBContext dbContext,
-            ILogger<AccountController> logger) // Inject ILogger
+            ILogger<AccountController> logger) // Inject 
         {
             _userManager = userManager;
             _signInManager = signInManager;

@@ -15,9 +15,13 @@ namespace E_LearningProject.Models
         public string? Instructor { get; set; }
 
         public string Link { get; set; }
-
+        /// <summary>
+        /// ////
+        /// </summary>
         [ForeignKey("category")]
         public int Category_Id { get; set; }
+
+       
 
         public Category category { get; set; }
 
